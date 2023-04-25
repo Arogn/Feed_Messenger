@@ -10,6 +10,7 @@ import pandas as pd
 from airflow.decorators import dag, task
 from airflow.operators.python import get_current_context
 
+#параметры, которые прокидываются в таски 
 default_args = {
     'owner': 'arogn',
     'depends_on_past': False,
@@ -18,6 +19,7 @@ default_args = {
     'start_date': datetime(2023, 3, 22),
 }
 
+#cron-выражение, говорящее о том, что надо запускать DAG в 11:00 
 schedule_interval = '0 11 * * *'
 
 def arogn_report_2(): 
